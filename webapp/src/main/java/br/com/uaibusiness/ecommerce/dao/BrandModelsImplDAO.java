@@ -1,5 +1,5 @@
 package br.com.uaibusiness.ecommerce.dao;
-// Generated Nov 24, 2019, 12:12:18 AM by Hibernate Tools 3.6.0.Final
+// Generated Nov 24, 2019, 2:33:23 PM by Hibernate Tools 3.6.0.Final
 
 import java.util.List;
 import javax.naming.InitialContext;
@@ -19,28 +19,20 @@ import static org.hibernate.criterion.Example.create;
  * @see br.com.uaibusiness.ecommerce.model.BrandModels
  * @author Hibernate Tools
  */
-public class BrandModelsmplDAO extends GenericHibernateDAO<BrandModels, Integer> implements BrandModelsDAO {
+public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer>
+		implements BrandModelsDAO {
 
-	private static final Log log = LogFactory.getLog(BrandModelsmplDAO.class);
-
-	public List<BrandModels> findByName(String name) {
-		return (List<BrandModels>) getSession().createCriteria(BrandModels.class)
-				.add(Restrictions.eq("name", name));
+	private static final Log log = LogFactory.getLog(BrandModelsImplDAO.class);
+	
+	public BrandModels findByName(String name) {
+		return (BrandModels) getSession().createCriteria(BrandModels.class)
+				.add(Restrictions.eq("name", name)).uniqueResult();
 	}
 	
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext().lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException("Could not locate SessionFactory in JNDI");
-		}
-	}
-
 	public void persist(BrandModels transientInstance) {
 		log.debug("persisting BrandModels instance");
 		try {
-			sessionFactory.getCurrentSession().persist(transientInstance);
+			getSession().persist(transientInstance);
 			log.debug("persist successful");
 		} catch (RuntimeException re) {
 			log.error("persist failed", re);
@@ -51,7 +43,7 @@ public class BrandModelsmplDAO extends GenericHibernateDAO<BrandModels, Integer>
 	public void attachDirty(BrandModels instance) {
 		log.debug("attaching dirty BrandModels instance");
 		try {
-			sessionFactory.getCurrentSession().saveOrUpdate(instance);
+			getSession().saveOrUpdate(instance);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -62,7 +54,7 @@ public class BrandModelsmplDAO extends GenericHibernateDAO<BrandModels, Integer>
 	public void attachClean(BrandModels instance) {
 		log.debug("attaching clean BrandModels instance");
 		try {
-			sessionFactory.getCurrentSession().lock(instance, LockMode.NONE);
+			getSession().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
 		} catch (RuntimeException re) {
 			log.error("attach failed", re);
@@ -73,7 +65,7 @@ public class BrandModelsmplDAO extends GenericHibernateDAO<BrandModels, Integer>
 	public void delete(BrandModels persistentInstance) {
 		log.debug("deleting BrandModels instance");
 		try {
-			sessionFactory.getCurrentSession().delete(persistentInstance);
+			getSession().delete(persistentInstance);
 			log.debug("delete successful");
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
@@ -84,7 +76,7 @@ public class BrandModelsmplDAO extends GenericHibernateDAO<BrandModels, Integer>
 	public BrandModels merge(BrandModels detachedInstance) {
 		log.debug("merging BrandModels instance");
 		try {
-			BrandModels result = (BrandModels) sessionFactory.getCurrentSession().merge(detachedInstance);
+			BrandModels result = (BrandModels) getSession().merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -96,7 +88,7 @@ public class BrandModelsmplDAO extends GenericHibernateDAO<BrandModels, Integer>
 	public BrandModels findById(int id) {
 		log.debug("getting BrandModels instance with id: " + id);
 		try {
-			BrandModels instance = (BrandModels) sessionFactory.getCurrentSession()
+			BrandModels instance = (BrandModels) getSession()
 					.get("br.com.uaibusiness.ecommerce.model.BrandModels", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
@@ -113,7 +105,7 @@ public class BrandModelsmplDAO extends GenericHibernateDAO<BrandModels, Integer>
 	public List<BrandModels> findByExample(BrandModels instance) {
 		log.debug("finding BrandModels instance by example");
 		try {
-			List<BrandModels> results = (List<BrandModels>) sessionFactory.getCurrentSession()
+			List<BrandModels> results = (List<BrandModels>) getSession()
 					.createCriteria("br.com.uaibusiness.ecommerce.model.BrandModels").add(create(instance)).list();
 			log.debug("find by example successful, result size: " + results.size());
 			return results;

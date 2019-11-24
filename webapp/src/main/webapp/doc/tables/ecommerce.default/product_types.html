@@ -86,12 +86,12 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="#column_detail_category_id">
-								category_id
+							<a href="#column_detail_name">
+								name
 							</a>
 						</td>
 						<td>
-							integer
+							varchar(255)
 						</td>
 						<td>
 							255
@@ -103,7 +103,7 @@
 							2
 						</td>
 						<td>
-							true
+							false
 						</td>
 						<td>
 							false
@@ -111,12 +111,12 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="#column_detail_name">
-								name
+							<a href="#column_detail_categories_id">
+								categories_id
 							</a>
 						</td>
 						<td>
-							varchar(255)
+							N/D
 						</td>
 						<td>
 							255
@@ -167,6 +167,58 @@
 			</tbody>
 		</table>
 
+			<table id="foreign_keys">
+				<thead>
+					<tr>
+						<th class="MainTableHeading" colspan="3">
+							Foreign Keys
+						</th>
+					</tr>
+					<tr>
+						<th style="width: 33%">
+							Name
+						</th>
+						<th style="width: 33%">
+							Referenced Table
+						</th>
+						<th style="width: 33%">
+							Columns
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+						<tr>
+							<td>
+								FK52ADD92995873609
+							</td>
+							<td>
+								<a href="categories.html" target="generalFrame">
+									categories
+								</a>
+							</td>
+							<td>
+									<a href="#column_detail_categories_id">
+										categories_id
+									</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								fk_product_types_categories1
+							</td>
+							<td>
+								<a href="categories.html" target="generalFrame">
+									categories
+								</a>
+							</td>
+							<td>
+									<a href="#column_detail_categories_id">
+										categories_id
+									</a>
+							</td>
+						</tr>
+				</tbody>
+			</table>
 			
 			<table id="unique_keys">
 				<thead>
@@ -217,11 +269,11 @@
 				<tbody>
 						<tr>
 							<td>
-								product_types_category_id_foreign
+								fk_product_types_categories1_idx
 							</td>
 							<td>
-									<a href="#column_detail_category_id">
-										category_id
+									<a href="#column_detail_categories_id">
+										categories_id
 									</a>
 							</td>
 						</tr>
@@ -260,11 +312,11 @@
 
 
 				<hr/>
-				<h3 id="column_detail_category_id">category_id</h3>
+				<h3 id="column_detail_name">name</h3>
 				
 				<ul>
 					<li>
-						<strong>Type:</strong> integer
+						<strong>Type:</strong> varchar(255)
 					</li>
 					<li>
 						<strong>Length:</strong> 255
@@ -276,7 +328,7 @@
 						<strong>Scale:</strong> 2
 					</li>
 					<li>
-						<strong>Nullable:</strong> true
+						<strong>Nullable:</strong> false
 					</li>
 					<li>
 						<strong>Unique:</strong> false
@@ -288,11 +340,11 @@
 
 
 				<hr/>
-				<h3 id="column_detail_name">name</h3>
+				<h3 id="column_detail_categories_id">categories_id</h3>
 				
 				<ul>
 					<li>
-						<strong>Type:</strong> varchar(255)
+						<strong>Type:</strong> N/D
 					</li>
 					<li>
 						<strong>Length:</strong> 255

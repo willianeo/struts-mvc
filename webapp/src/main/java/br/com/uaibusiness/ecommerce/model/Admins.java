@@ -1,5 +1,5 @@
 package br.com.uaibusiness.ecommerce.model;
-// Generated Nov 24, 2019, 12:12:18 AM by Hibernate Tools 3.6.0.Final
+// Generated Nov 24, 2019, 2:33:23 PM by Hibernate Tools 3.6.0.Final
 
 import java.util.Date;
 
@@ -9,7 +9,7 @@ import java.util.Date;
 public class Admins implements java.io.Serializable {
 
 	private int id;
-	private Integer shopId;
+	private Shops shops;
 	private String name;
 	private String username;
 	private int phone;
@@ -21,8 +21,9 @@ public class Admins implements java.io.Serializable {
 	public Admins() {
 	}
 
-	public Admins(int id, String name, String username, int phone, String email, String password) {
+	public Admins(int id, Shops shops, String name, String username, int phone, String email, String password) {
 		this.id = id;
+		this.shops = shops;
 		this.name = name;
 		this.username = username;
 		this.phone = phone;
@@ -30,10 +31,10 @@ public class Admins implements java.io.Serializable {
 		this.password = password;
 	}
 
-	public Admins(int id, Integer shopId, String name, String username, int phone, String email, Date emailVerifiedAt,
+	public Admins(int id, Shops shops, String name, String username, int phone, String email, Date emailVerifiedAt,
 			String password, String rememberToken) {
 		this.id = id;
-		this.shopId = shopId;
+		this.shops = shops;
 		this.name = name;
 		this.username = username;
 		this.phone = phone;
@@ -51,12 +52,12 @@ public class Admins implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Integer getShopId() {
-		return this.shopId;
+	public Shops getShops() {
+		return this.shops;
 	}
 
-	public void setShopId(Integer shopId) {
-		this.shopId = shopId;
+	public void setShops(Shops shops) {
+		this.shops = shops;
 	}
 
 	public String getName() {

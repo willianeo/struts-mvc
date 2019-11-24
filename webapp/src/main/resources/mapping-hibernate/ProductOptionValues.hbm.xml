@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 24, 2019, 12:12:18 AM by Hibernate Tools 3.6.0.Final -->
+<!-- Generated Nov 24, 2019, 2:33:23 PM by Hibernate Tools 3.6.0.Final -->
 <hibernate-mapping>
     <class name="br.com.uaibusiness.ecommerce.model.ProductOptionValues" table="product_option_values" catalog="ecommerce">
-        <id name="id" type="int">
+        <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <property name="productId" type="java.lang.Integer">
-            <column name="product_id" />
-        </property>
-        <property name="optionId" type="java.lang.Integer">
-            <column name="option_id" />
-        </property>
-        <property name="optionValueId" type="java.lang.Integer">
-            <column name="option_value_id" />
-        </property>
+        <many-to-one name="optionValues" class="br.com.uaibusiness.ecommerce.model.OptionValues" fetch="select">
+            <column name="option_values_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="options" class="br.com.uaibusiness.ecommerce.model.Options" fetch="select">
+            <column name="options_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="products" class="br.com.uaibusiness.ecommerce.model.Products" fetch="select">
+            <column name="products_id" not-null="true" />
+        </many-to-one>
     </class>
 </hibernate-mapping>

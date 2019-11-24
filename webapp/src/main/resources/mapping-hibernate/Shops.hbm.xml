@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 24, 2019, 12:12:18 AM by Hibernate Tools 3.6.0.Final -->
+<!-- Generated Nov 24, 2019, 2:33:23 PM by Hibernate Tools 3.6.0.Final -->
 <hibernate-mapping>
     <class name="br.com.uaibusiness.ecommerce.model.Shops" table="shops" catalog="ecommerce">
         <id name="id" type="int">
             <column name="id" />
             <generator class="assigned" />
         </id>
-        <property name="marketId" type="java.lang.Integer">
-            <column name="market_id" />
-        </property>
+        <many-to-one name="markets" class="br.com.uaibusiness.ecommerce.model.Markets" fetch="select">
+            <column name="markets_id" not-null="true" />
+        </many-to-one>
         <property name="name" type="string">
             <column name="name" not-null="true" />
         </property>
@@ -32,5 +32,17 @@
         <property name="status" type="byte">
             <column name="status" not-null="true" />
         </property>
+        <set name="adminses" table="admins" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="shops_id" not-null="true" />
+            </key>
+            <one-to-many class="br.com.uaibusiness.ecommerce.model.Admins" />
+        </set>
+        <set name="productses" table="products" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="shops_id" not-null="true" />
+            </key>
+            <one-to-many class="br.com.uaibusiness.ecommerce.model.Products" />
+        </set>
     </class>
 </hibernate-mapping>

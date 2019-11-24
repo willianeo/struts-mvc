@@ -2,22 +2,38 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-  <table-filter match-catalog="ecommerce" match-name="admins"/>
-  <table-filter match-catalog="ecommerce" match-name="brand_models"/>
-  <table-filter match-catalog="ecommerce" match-name="brands"/>
-  <table-filter match-catalog="ecommerce" match-name="categories"/>
-  <table-filter match-catalog="ecommerce" match-name="countries"/>
-  <table-filter match-catalog="ecommerce" match-name="m_option_values"/>
-  <table-filter match-catalog="ecommerce" match-name="m_options"/>
-  <table-filter match-catalog="ecommerce" match-name="markets"/>
-  <table-filter match-catalog="ecommerce" match-name="migrations"/>
-  <table-filter match-catalog="ecommerce" match-name="option_values"/>
-  <table-filter match-catalog="ecommerce" match-name="options"/>
-  <table-filter match-catalog="ecommerce" match-name="password_resets"/>
-  <table-filter match-catalog="ecommerce" match-name="product_m_option_values"/>
-  <table-filter match-catalog="ecommerce" match-name="product_option_values"/>
-  <table-filter match-catalog="ecommerce" match-name="product_type_m_options"/>
-  <table-filter match-catalog="ecommerce" match-name="product_types"/>
-  <table-filter match-catalog="ecommerce" match-name="products"/>
-  <table-filter match-catalog="ecommerce" match-name="shops"/>
+
+
+	<table-filter match-name="admins" match-catalog="ecommerce"></table-filter>
+	<table-filter match-name="brand_models" match-catalog="ecommerce"></table-filter>
+	<table-filter match-name="brands" match-catalog="ecommerce"></table-filter>
+	<table-filter match-name="categories" match-catalog="ecommerce"></table-filter>
+	<table-filter match-name="countries" match-catalog="ecommerce"></table-filter>
+	<table-filter match-name="m_option_values"
+		match-catalog="ecommerce">
+	</table-filter>
+	<table-filter match-name="m_options" match-catalog="ecommerce"></table-filter>
+	<table-filter match-name="markets" match-catalog="ecommerce"></table-filter>
+	<table-filter match-name="migrations" match-catalog="ecommerce"></table-filter>
+	<table-filter match-name="option_values"
+		match-catalog="ecommerce">
+	</table-filter>
+	<table-filter match-name="options" match-catalog="ecommerce"></table-filter>
+	<table-filter match-name="password_resets"
+		match-catalog="ecommerce">
+	</table-filter>
+	<table-filter match-name="product_m_option_values"
+		match-catalog="ecommerce">
+	</table-filter>
+	<table-filter match-name="product_option_values"
+		match-catalog="ecommerce">
+	</table-filter>
+	<table-filter match-name="product_type_m_options"
+		match-catalog="ecommerce">
+	</table-filter>
+	<table-filter match-name="product_types"
+		match-catalog="ecommerce">
+	</table-filter>
+	<table-filter match-name="products" match-catalog="ecommerce"></table-filter>
+	<table-filter match-name="shops" match-catalog="ecommerce"></table-filter>
 </hibernate-reverse-engineering>

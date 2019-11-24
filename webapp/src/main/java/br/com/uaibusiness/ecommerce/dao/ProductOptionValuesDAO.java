@@ -1,5 +1,5 @@
 package br.com.uaibusiness.ecommerce.dao;
-// Generated Nov 24, 2019, 12:12:18 AM by Hibernate Tools 3.6.0.Final
+// Generated Nov 24, 2019, 2:33:23 PM by Hibernate Tools 3.6.0.Final
 
 import java.util.List;
 import javax.naming.InitialContext;
@@ -89,7 +89,7 @@ public class ProductOptionValuesDAO {
 		}
 	}
 
-	public ProductOptionValues findById(int id) {
+	public ProductOptionValues findById(java.lang.Integer id) {
 		log.debug("getting ProductOptionValues instance with id: " + id);
 		try {
 			ProductOptionValues instance = (ProductOptionValues) sessionFactory.getCurrentSession()

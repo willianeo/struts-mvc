@@ -1,10 +1,8 @@
 package br.com.uaibusiness.ecommerce.dao;
-// Generated Nov 24, 2019, 12:12:18 AM by Hibernate Tools 3.6.0.Final
-
-
-import br.com.uaibusiness.ecommerce.model.Admins;
+// Generated Nov 24, 2019, 2:33:23 PM by Hibernate Tools 3.6.0.Final
 
 import br.com.uaibusiness.ecommerce.hibernate.GenericDAO;
+import br.com.uaibusiness.ecommerce.model.Admins;
 
 /**
  * Home object for domain model class Admins.

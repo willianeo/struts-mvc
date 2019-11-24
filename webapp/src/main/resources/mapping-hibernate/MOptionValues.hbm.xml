@@ -1,15 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 24, 2019, 12:12:18 AM by Hibernate Tools 3.6.0.Final -->
+<!-- Generated Nov 24, 2019, 2:33:23 PM by Hibernate Tools 3.6.0.Final -->
 <hibernate-mapping>
     <class name="br.com.uaibusiness.ecommerce.model.MOptionValues" table="m_option_values" catalog="ecommerce">
         <id name="id" type="int">
             <column name="id" />
             <generator class="assigned" />
         </id>
-        <property name="MOptionId" type="java.lang.Integer">
-            <column name="m_option_id" />
-        </property>
+        <many-to-one name="MOptions" class="br.com.uaibusiness.ecommerce.model.MOptions" fetch="select">
+            <column name="m_options_id" not-null="true" />
+        </many-to-one>
+        <set name="productTypeMOptionses" table="product_type_m_options" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="m_option_values_id" not-null="true" />
+            </key>
+            <one-to-many class="br.com.uaibusiness.ecommerce.model.ProductTypeMOptions" />
+        </set>
     </class>
 </hibernate-mapping>

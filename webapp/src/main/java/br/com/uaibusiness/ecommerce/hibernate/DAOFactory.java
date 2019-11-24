@@ -2,6 +2,10 @@ package br.com.uaibusiness.ecommerce.hibernate;
 
 import br.com.uaibusiness.ecommerce.dao.AdminsDAO;
 import br.com.uaibusiness.ecommerce.dao.BrandModelsDAO;
+import br.com.uaibusiness.ecommerce.dao.BrandsDAO;
+import br.com.uaibusiness.ecommerce.dao.CategoriesDAO;
+import br.com.uaibusiness.ecommerce.dao.CountriesDAO;
+import br.com.uaibusiness.ecommerce.dao.MarketsDAO;
 
 public abstract class DAOFactory {
 	/**
@@ -27,6 +31,10 @@ public abstract class DAOFactory {
     // Add your DAO interfaces here
     public abstract AdminsDAO getAdminsDAO();
     public abstract BrandModelsDAO getBrandModelsDAO();
+    public abstract BrandsDAO getBrandsDAO();
+    public abstract CategoriesDAO getCategoriesDAO();
+    public abstract CountriesDAO getCountriesDAO();
+    public abstract MarketsDAO getMarketsDAO();
 
 
 }

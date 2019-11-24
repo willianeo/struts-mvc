@@ -86,31 +86,6 @@
 					</tr>
 					<tr>
 						<td>
-							<a href="#column_detail_market_id">
-								market_id
-							</a>
-						</td>
-						<td>
-							integer
-						</td>
-						<td>
-							255
-						</td>
-						<td>
-							19
-						</td>
-						<td>
-							2
-						</td>
-						<td>
-							true
-						</td>
-						<td>
-							false
-						</td>
-					</tr>
-					<tr>
-						<td>
 							<a href="#column_detail_name">
 								name
 							</a>
@@ -284,6 +259,31 @@
 							false
 						</td>
 					</tr>
+					<tr>
+						<td>
+							<a href="#column_detail_markets_id">
+								markets_id
+							</a>
+						</td>
+						<td>
+							N/D
+						</td>
+						<td>
+							255
+						</td>
+						<td>
+							19
+						</td>
+						<td>
+							2
+						</td>
+						<td>
+							false
+						</td>
+						<td>
+							false
+						</td>
+					</tr>
 			</tbody>
 		</table>
 
@@ -317,6 +317,58 @@
 			</tbody>
 		</table>
 
+			<table id="foreign_keys">
+				<thead>
+					<tr>
+						<th class="MainTableHeading" colspan="3">
+							Foreign Keys
+						</th>
+					</tr>
+					<tr>
+						<th style="width: 33%">
+							Name
+						</th>
+						<th style="width: 33%">
+							Referenced Table
+						</th>
+						<th style="width: 33%">
+							Columns
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+						<tr>
+							<td>
+								FK685843DC712E2EB
+							</td>
+							<td>
+								<a href="markets.html" target="generalFrame">
+									markets
+								</a>
+							</td>
+							<td>
+									<a href="#column_detail_markets_id">
+										markets_id
+									</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								fk_shops_markets1
+							</td>
+							<td>
+								<a href="markets.html" target="generalFrame">
+									markets
+								</a>
+							</td>
+							<td>
+									<a href="#column_detail_markets_id">
+										markets_id
+									</a>
+							</td>
+						</tr>
+				</tbody>
+			</table>
 			
 			<table id="unique_keys">
 				<thead>
@@ -367,11 +419,11 @@
 				<tbody>
 						<tr>
 							<td>
-								shops_market_id_foreign
+								fk_shops_markets1_idx
 							</td>
 							<td>
-									<a href="#column_detail_market_id">
-										market_id
+									<a href="#column_detail_markets_id">
+										markets_id
 									</a>
 							</td>
 						</tr>
@@ -402,34 +454,6 @@
 					</li>
 					<li>
 						<strong>Unique:</strong> true
-					</li>
-					<li>
-						<strong>Comment:</strong> 
-					</li>
-				</ul>
-
-
-				<hr/>
-				<h3 id="column_detail_market_id">market_id</h3>
-				
-				<ul>
-					<li>
-						<strong>Type:</strong> integer
-					</li>
-					<li>
-						<strong>Length:</strong> 255
-					</li>
-					<li>
-						<strong>Precision:</strong> 19
-					</li>
-					<li>
-						<strong>Scale:</strong> 2
-					</li>
-					<li>
-						<strong>Nullable:</strong> true
-					</li>
-					<li>
-						<strong>Unique:</strong> false
 					</li>
 					<li>
 						<strong>Comment:</strong> 
@@ -611,6 +635,34 @@
 				<ul>
 					<li>
 						<strong>Type:</strong> tinyint
+					</li>
+					<li>
+						<strong>Length:</strong> 255
+					</li>
+					<li>
+						<strong>Precision:</strong> 19
+					</li>
+					<li>
+						<strong>Scale:</strong> 2
+					</li>
+					<li>
+						<strong>Nullable:</strong> false
+					</li>
+					<li>
+						<strong>Unique:</strong> false
+					</li>
+					<li>
+						<strong>Comment:</strong> 
+					</li>
+				</ul>
+
+
+				<hr/>
+				<h3 id="column_detail_markets_id">markets_id</h3>
+				
+				<ul>
+					<li>
+						<strong>Type:</strong> N/D
 					</li>
 					<li>
 						<strong>Length:</strong> 255
