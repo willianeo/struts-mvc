@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">bAac7ncm#</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ecommerce</property>
+        <property name="hibernate.connection.username">wandrade</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">true</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <property name="hibernate.validator.autoregister_listeners">false</property>
+        
+        <mapping resource="br/com/uaibusiness/ecommerce/model/BrandModels.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/Options.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/ProductTypes.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/Migrations.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/PasswordResets.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/Shops.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/Categories.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/Countries.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/Markets.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/OptionValues.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/MOptionValues.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/Admins.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/ProductOptionValues.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/ProductMOptionValues.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/ProductTypeMOptions.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/Brands.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/Products.hbm.xml" />
+        <mapping resource="br/com/uaibusiness/ecommerce/model/MOptions.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 24, 2019, 12:12:18 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="br.com.uaibusiness.ecommerce.model.Products" table="products" catalog="ecommerce">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="productTypeId" type="java.lang.Integer">
+            <column name="product_type_id" />
+        </property>
+        <property name="categoryId" type="java.lang.Integer">
+            <column name="category_id" />
+        </property>
+        <property name="marketId" type="java.lang.Integer">
+            <column name="market_id" />
+        </property>
+        <property name="shopId" type="java.lang.Integer">
+            <column name="shop_id" />
+        </property>
+        <property name="countryId" type="java.lang.Integer">
+            <column name="country_id" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" not-null="true" />
+        </property>
+        <property name="price" type="int">
+            <column name="price" not-null="true" />
+        </property>
+        <property name="discountPrice" type="int">
+            <column name="discount_price" not-null="true" />
+        </property>
+        <property name="discount" type="int">
+            <column name="discount" not-null="true" />
+        </property>
+        <property name="quantity" type="int">
+            <column name="quantity" not-null="true" />
+        </property>
+        <property name="views" type="int">
+            <column name="views" not-null="true" />
+        </property>
+        <property name="likes" type="int">
+            <column name="likes" not-null="true" />
+        </property>
+        <property name="sortOrder" type="int">
+            <column name="sort_order" not-null="true" />
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

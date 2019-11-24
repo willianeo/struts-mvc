@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 24, 2019, 12:12:18 AM by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="br.com.uaibusiness.ecommerce.model.Categories" table="categories" catalog="ecommerce">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="lft" type="int">
+            <column name="_lft" not-null="true" />
+        </property>
+        <property name="rgt" type="int">
+            <column name="_rgt" not-null="true" />
+        </property>
+        <property name="parentId" type="java.lang.Integer">
+            <column name="parent_id" />
+        </property>
+        <property name="top" type="byte">
+            <column name="top" not-null="true" />
+        </property>
+        <property name="sortOrder" type="int">
+            <column name="sort_order" not-null="true" />
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
