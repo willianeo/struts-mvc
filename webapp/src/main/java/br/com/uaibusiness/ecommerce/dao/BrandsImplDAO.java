@@ -10,22 +10,22 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
 import br.com.uaibusiness.ecommerce.hibernate.GenericHibernateDAO;
-import br.com.uaibusiness.ecommerce.model.BrandModels;
+import br.com.uaibusiness.ecommerce.model.Brands;
 
 import static org.hibernate.criterion.Example.create;
 
 /**
- * Home object for domain model class BrandModels.
- * @see br.com.uaibusiness.ecommerce.model.BrandModels
+ * Home object for domain model class Brands.
+ * @see br.com.uaibusiness.ecommerce.model.Brands
  * @author Hibernate Tools
  */
-public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer>
-		implements BrandModelsDAO {
+public class BrandsImplDAO extends GenericHibernateDAO<Brands, Integer>
+		implements BrandsDAO {
 
-	private static final Log log = LogFactory.getLog(BrandModelsImplDAO.class);
+	private static final Log log = LogFactory.getLog(BrandsImplDAO.class);
 	
-	public void persist(BrandModels transientInstance) {
-		log.debug("persisting BrandModels instance");
+	public void persist(Brands transientInstance) {
+		log.debug("persisting Brands instance");
 		try {
 			getSession().persist(transientInstance);
 			log.debug("persist successful");
@@ -35,8 +35,8 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public void attachDirty(BrandModels instance) {
-		log.debug("attaching dirty BrandModels instance");
+	public void attachDirty(Brands instance) {
+		log.debug("attaching dirty Brands instance");
 		try {
 			getSession().saveOrUpdate(instance);
 			log.debug("attach successful");
@@ -46,8 +46,8 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public void attachClean(BrandModels instance) {
-		log.debug("attaching clean BrandModels instance");
+	public void attachClean(Brands instance) {
+		log.debug("attaching clean Brands instance");
 		try {
 			getSession().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
@@ -57,8 +57,8 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public void delete(BrandModels persistentInstance) {
-		log.debug("deleting BrandModels instance");
+	public void delete(Brands persistentInstance) {
+		log.debug("deleting Brands instance");
 		try {
 			getSession().delete(persistentInstance);
 			log.debug("delete successful");
@@ -68,10 +68,10 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public BrandModels merge(BrandModels detachedInstance) {
-		log.debug("merging BrandModels instance");
+	public Brands merge(Brands detachedInstance) {
+		log.debug("merging Brands instance");
 		try {
-			BrandModels result = (BrandModels) getSession().merge(detachedInstance);
+			Brands result = (Brands) getSession().merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -80,11 +80,11 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public BrandModels findById(int id) {
-		log.debug("getting BrandModels instance with id: " + id);
+	public Brands findById(int id) {
+		log.debug("getting Brands instance with id: " + id);
 		try {
-			BrandModels instance = (BrandModels) getSession()
-					.get("br.com.uaibusiness.ecommerce.model.BrandModels", id);
+			Brands instance = (Brands) getSession()
+					.get("br.com.uaibusiness.ecommerce.model.Brands", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
 			} else {
@@ -97,11 +97,11 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public List<BrandModels> findByExample(BrandModels instance) {
-		log.debug("finding BrandModels instance by example");
+	public List<Brands> findByExample(Brands instance) {
+		log.debug("finding Brands instance by example");
 		try {
-			List<BrandModels> results = (List<BrandModels>) getSession()
-					.createCriteria("br.com.uaibusiness.ecommerce.model.BrandModels").add(create(instance)).list();
+			List<Brands> results = (List<Brands>) getSession()
+					.createCriteria("br.com.uaibusiness.ecommerce.model.Brands").add(create(instance)).list();
 			log.debug("find by example successful, result size: " + results.size());
 			return results;
 		} catch (RuntimeException re) {

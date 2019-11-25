@@ -19,7 +19,8 @@ import static org.hibernate.criterion.Example.create;
  * @see br.com.uaibusiness.ecommerce.model.Admins
  * @author Hibernate Tools
  */
-public class AdminsImplDAO extends GenericHibernateDAO<Admins, Integer> implements AdminsDAO {
+public class AdminsImplDAO extends GenericHibernateDAO<Admins, Integer>
+		implements AdminsDAO {
 
 	private static final Log log = LogFactory.getLog(AdminsImplDAO.class);
 

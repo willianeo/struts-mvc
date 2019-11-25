@@ -7,25 +7,24 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 
 import br.com.uaibusiness.ecommerce.hibernate.GenericHibernateDAO;
-import br.com.uaibusiness.ecommerce.model.BrandModels;
+import br.com.uaibusiness.ecommerce.model.ProductOptionValues;
 
 import static org.hibernate.criterion.Example.create;
 
 /**
- * Home object for domain model class BrandModels.
- * @see br.com.uaibusiness.ecommerce.model.BrandModels
+ * Home object for domain model class ProductOptionValues.
+ * @see br.com.uaibusiness.ecommerce.model.ProductOptionValues
  * @author Hibernate Tools
  */
-public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer>
-		implements BrandModelsDAO {
+public class ProductOptionValuesImplDAO extends GenericHibernateDAO<ProductOptionValues, Integer>
+		implements ProductOptionValuesDAO {
 
-	private static final Log log = LogFactory.getLog(BrandModelsImplDAO.class);
+	private static final Log log = LogFactory.getLog(ProductOptionValuesImplDAO.class);
 	
-	public void persist(BrandModels transientInstance) {
-		log.debug("persisting BrandModels instance");
+	public void persist(ProductOptionValues transientInstance) {
+		log.debug("persisting ProductOptionValues instance");
 		try {
 			getSession().persist(transientInstance);
 			log.debug("persist successful");
@@ -35,8 +34,8 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public void attachDirty(BrandModels instance) {
-		log.debug("attaching dirty BrandModels instance");
+	public void attachDirty(ProductOptionValues instance) {
+		log.debug("attaching dirty ProductOptionValues instance");
 		try {
 			getSession().saveOrUpdate(instance);
 			log.debug("attach successful");
@@ -46,8 +45,8 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public void attachClean(BrandModels instance) {
-		log.debug("attaching clean BrandModels instance");
+	public void attachClean(ProductOptionValues instance) {
+		log.debug("attaching clean ProductOptionValues instance");
 		try {
 			getSession().lock(instance, LockMode.NONE);
 			log.debug("attach successful");
@@ -57,8 +56,8 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public void delete(BrandModels persistentInstance) {
-		log.debug("deleting BrandModels instance");
+	public void delete(ProductOptionValues persistentInstance) {
+		log.debug("deleting ProductOptionValues instance");
 		try {
 			getSession().delete(persistentInstance);
 			log.debug("delete successful");
@@ -68,10 +67,11 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public BrandModels merge(BrandModels detachedInstance) {
-		log.debug("merging BrandModels instance");
+	public ProductOptionValues merge(ProductOptionValues detachedInstance) {
+		log.debug("merging ProductOptionValues instance");
 		try {
-			BrandModels result = (BrandModels) getSession().merge(detachedInstance);
+			ProductOptionValues result = (ProductOptionValues) getSession()
+					.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -80,11 +80,11 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public BrandModels findById(int id) {
-		log.debug("getting BrandModels instance with id: " + id);
+	public ProductOptionValues findById(java.lang.Integer id) {
+		log.debug("getting ProductOptionValues instance with id: " + id);
 		try {
-			BrandModels instance = (BrandModels) getSession()
-					.get("br.com.uaibusiness.ecommerce.model.BrandModels", id);
+			ProductOptionValues instance = (ProductOptionValues) getSession()
+					.get("br.com.uaibusiness.ecommerce.model.ProductOptionValues", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
 			} else {
@@ -97,11 +97,12 @@ public class BrandModelsImplDAO extends GenericHibernateDAO<BrandModels, Integer
 		}
 	}
 
-	public List<BrandModels> findByExample(BrandModels instance) {
-		log.debug("finding BrandModels instance by example");
+	public List<ProductOptionValues> findByExample(ProductOptionValues instance) {
+		log.debug("finding ProductOptionValues instance by example");
 		try {
-			List<BrandModels> results = (List<BrandModels>) getSession()
-					.createCriteria("br.com.uaibusiness.ecommerce.model.BrandModels").add(create(instance)).list();
+			List<ProductOptionValues> results = (List<ProductOptionValues>) getSession()
+					.createCriteria("br.com.uaibusiness.ecommerce.model.ProductOptionValues").add(create(instance))
+					.list();
 			log.debug("find by example successful, result size: " + results.size());
 			return results;
 		} catch (RuntimeException re) {
